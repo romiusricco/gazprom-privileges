@@ -1,3 +1,6 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
 .subscription-card {
   height: 100%;
   min-height: 248px;

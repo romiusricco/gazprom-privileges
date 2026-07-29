@@ -1,29 +1,29 @@
 /* Global */
 /* ------------------------------------ */
-@import "global/_normalize.scss";
-@import "global/_mixins";
-@import "global/_variables";
-@import "global/_fonts";
-@import "global/_reboot";
-@import "global/_container";
-@import "global/_visually-hidden";
+@use "global/normalize.scss";
+@use "global/variables" as *;
+@use "global/mixins" as *;
+@use "global/fonts";
+@use "global/reboot";
+@use "global/container";
+@use "global/visually-hidden";
 
 /* Blocks */
 /* ------------------------------------ */
-@import "blocks/_header";
-@import "blocks/_footer";
-@import "blocks/_btn";
-@import "blocks/_btn-icon";
-@import "blocks/_socials";
-@import "blocks/_custom-input";
-@import "blocks/_custom-checkbox";
-@import "blocks/_form";
-@import "blocks/_bonus-card";
-@import "blocks/_subscription-card";
-@import "blocks/_intro";
-@import "blocks/_bonus";
-@import "blocks/_application";
-@import "blocks/_subscriptions";
-@import "blocks/_connect";
-@import "blocks/_benefit";
-@import "blocks/_faq";
+@use "blocks/header";
+@use "blocks/footer";
+@use "blocks/btn";
+@use "blocks/btn-icon";
+@use "blocks/socials";
+@use "blocks/custom-input";
+@use "blocks/custom-checkbox";
+@use "blocks/form";
+@use "blocks/bonus-card";
+@use "blocks/subscription-card";
+@use "blocks/intro";
+@use "blocks/bonus";
+@use "blocks/application";
+@use "blocks/subscriptions";
+@use "blocks/connect";
+@use "blocks/benefit";
+@use "blocks/faq";

@@ -1,3 +1,6 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
 .bonus-card {
   display: flex;
   min-height: 200px;

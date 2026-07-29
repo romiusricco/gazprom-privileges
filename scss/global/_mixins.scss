@@ -1,3 +1,5 @@
+@use "../global/variables" as *;
+
 @mixin vp-360 {
   @media (min-width: $vp-mobile) {
     @content;
