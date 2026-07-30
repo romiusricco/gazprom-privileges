@@ -12,6 +12,12 @@
   }
 }
 
+@mixin vp-960 {
+  @media (min-width: $vp-desktop-sm) {
+    @content;
+  }
+}
+
 @mixin vp-1024 {
   @media (min-width: $vp-desktop) {
     @content;
@@ -23,3 +29,10 @@
     @content;
   }
 }
+
+@mixin vp-1536 {
+  @media (min-width: $vp-desktop-xl) {
+    @content;
+  }
+}
+

@@ -4,9 +4,6 @@
 .connect {
   margin: 0 0 60px 0;
 
-  @include vp-768 {
-    margin: 0 0 60px 0;
-  }
 
   @include vp-1024 {
     margin: 0 0 100px 0;
@@ -72,6 +69,12 @@
     &.is-active {
       display: block;
     }
+
+    // Страховка: пока стоит атрибут hidden — панель скрыта всегда,
+    // даже если на ней остался .is-active. Идёт ПОСЛЕ .is-active.
+    &[hidden] {
+      display: none;
+    }
   }
 
   &__tabs-controls {
@@ -102,6 +105,7 @@
     padding: 11px 15px;
     display: flex;
     justify-content: center;
+    font-family: inherit;
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
@@ -110,44 +114,55 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
 
-
-    @include vp-360 {
-      padding: 11px 25px;
-    }
 
     @include vp-1024 {
       padding: 15px 25px;
     }
 
+    &:hover:not(.is-active) {
+      background-color: $color-solitude-1;
+    }
+
     &.is-active {
       color: $color-white;
       background-color: $color-black-russian;
+
+      &:hover {
+        background-color: $color-black-russian; // не менять при hover
+      }
     }
+  }
+
+  &__link {
+    color: $color-royal-blue-1;
   }
 
   &__list {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: grid;
+    display: grid; // 1 колонка по умолчанию (mobile)
     gap: 24px 0;
+    counter-reset: step; // ← старт счётчика для каждого списка отдельно
 
     @include vp-1024 {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr); // 2×2
       gap: 60px 64px;
     }
 
     @include vp-1304 {
+      grid-template-columns: repeat(4, 1fr); // 4 в ряд; 5+ пунктов сами уйдут на новую строку
       gap: 32px;
-      display: flex;
     }
   }
 
   &__list-item {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start; // кружок прижат к верху заголовка
     gap: 0 12px;
+    counter-increment: step;
 
     @include vp-768 {
       gap: 0 20px;
@@ -159,11 +174,8 @@
       gap: 20px 0;
     }
 
-    @include vp-1304 {
-      width: calc(25% - (32px * 3 / 4));
-    }
-
     &::before {
+      content: counter(step);
       width: 48px;
       height: 48px;
       display: flex;
@@ -191,17 +203,15 @@
         line-height: 32px;
       }
     }
+  }
 
-    &:first-child::before {
-      content: "1";
-    }
+  // Тело шага: на мобильных/планшетах — колонка справа от кружка,
+  // на десктопе — растягивается на колонку сетки и центрирует текст
+  &__item-content {
+    min-width: 0; // позволяет тексту переноситься, не вылезая за контейнер
 
-    &:nth-child(2)::before {
-      content: "2";
-    }
-
-    &:last-child::before {
-      content: "3";
+    @include vp-1024 {
+      width: 100%;
     }
   }
 

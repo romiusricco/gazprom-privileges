@@ -20,12 +20,19 @@
 
   &[disabled] {
     cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
   }
 
   &--secondary {
     padding: 19px 32px;
     color: $color-white;
     background-color: $color-royal-blue-1;
+
+    &:hover,
+    &:focus-visible {
+      background-color: $color-free-speech-blue; // Чуть более темный синий
+    }
   }
 
   &--tertiary {

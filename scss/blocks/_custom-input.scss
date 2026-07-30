@@ -3,10 +3,10 @@
 
 .custom-input {
   position: relative;
-  width: 330px;
+  width: 100%;
 
   @include vp-768 {
-    width: 728px;
+    width: 100%;
   }
 
   &__field {
@@ -19,6 +19,11 @@
     border-radius: 10px;
     outline: none;
 
+    &:hover,
+    &:focus-visible {
+      border-color: $color-royal-blue-1;
+    }
+
     @include vp-768 {
       padding: 29px 19px 9px 19px;
     }
@@ -26,11 +31,15 @@
 
   &__label {
     position: absolute;
-    left: 19px;
+    left: 15px; // Выравниваем по padding-left инпута
     top: 8px;
     font-size: 12px;
     line-height: 14px;
     color: $color-storm-grey-1;
+
+    @include vp-768 {
+      left: 19px; // На планшете padding у инпута 19px
+    }
   }
 
   &__error {

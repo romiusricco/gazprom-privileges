@@ -22,32 +22,55 @@
     }
 
     @include vp-1024 {
-      padding: 40px 60px;
+      padding: 40px 60px; // вертикальная раскладка, но воздух уже десктопный
     }
 
     @include vp-1304 {
       padding: 80px;
       display: flex;
-      flex-direction: row-reverse;
+      flex-direction: row-reverse; // picture в DOM первый → уходит вправо
+      justify-content: space-between; // текст прижат влево, коробка вправо
+      align-items: center; // вертикальное центрирование без растяжения
     }
   }
 
   &__picture {
     @include vp-1304 {
-      flex-shrink: 0;
+      flex-shrink: 0; // текст не сжимает коробку
+      margin: 0 -80px 0 0
     }
   }
 
+  // Отображаемый размер задаём ТОЛЬКО здесь — атрибуты <source> на рендер не влияют.
+  // Цифры повторяют width/height из HTML, чтобы не было скачков при загрузке.
   &__image {
+    display: block;
+    width: 250px;
+    height: 200px;
     margin: 0 auto 20px auto;
 
     @include vp-768 {
+      width: 300px;
+      height: 240px;
       margin: 0 auto 40px auto;
+    }
+
+    @include vp-1024 {
+      width: 400px;
+      height: 320px;
+      margin: 0 auto 40px auto; // вертикальная раскладка — коробка по центру сверху
+    }
+
+    @include vp-1304 {
+      width: 600px; // покрывает и 1536 (wrapper там те же 1224px)
+      height: 480px;
+      margin: 0; // в колонке auto и нижний отступ не нужны
     }
   }
 
   &__content {
     @include vp-1304 {
+      width: 100%;
       max-width: 560px;
     }
   }
@@ -83,6 +106,7 @@
   &__list {
     margin: 0 0 35px 0;
     padding: 0;
+    list-style: none;
     display: flex;
     flex-direction: column;
     gap: 10px 0;
@@ -96,6 +120,24 @@
     @include vp-1024 {
       margin: 0 0 40px 0;
     }
+
+    @include vp-1304 {
+      gap: 16px 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 1px 0 0 0;
+    color: $color-white;
   }
 
   &__text {

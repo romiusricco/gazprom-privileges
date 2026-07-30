@@ -110,6 +110,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 0 14px;
+    font-family: inherit;
     font-size: 16px;
     line-height: 22px;
     text-align: left;
@@ -185,9 +186,6 @@
     font-size: 14px;
     line-height: 18px;
 
-    @include vp-768 {
-      padding: 0 0 16px 0;
-    }
 
     @include vp-1024 {
       padding: 2px 24px 24px 24px;

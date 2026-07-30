@@ -132,7 +132,7 @@
     }
   }
 
-  .header__login {
+  &__login {
     display: none;
 
     @include vp-1024 {
