@@ -1,0 +1,327 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
+.advantages {
+    margin: 0 0 60px 0;
+    overflow-x: clip; // ← «усы» доходят до края страницы, но не создают горизонтальный скрол
+
+    @include vp-1024 {
+        margin: 0 0 100px 0;
+    }
+
+    @include vp-1536 {
+        margin: 0 0 120px 0;
+    }
+
+    /* ---------- Промо-тройка ---------- */
+    &__promo {
+        list-style: none;
+        margin: 0 0 60px 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        background-color: $color-white;
+        box-shadow: 0px 4px 20px 0px $color-black-russian-2;
+        border-radius: 16px;
+
+        @include vp-768 {
+            padding: 24px;
+        }
+
+        @include vp-1024 {
+            background-color: transparent;
+            box-shadow: none;
+            border-radius: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); // 298px каждая при inner 944
+            gap: 25px;
+
+        }
+    }
+
+    &__promo-item {
+        padding: 16px 0;
+
+        @include vp-1024 {
+            min-height: 144px; // высота карточки по макету 1024
+            padding: 32px 20px;
+            background-color: $color-solitude-1; // три отдельные карточки
+            border-radius: 16px;
+            align-items: center;
+
+        }
+    }
+
+    &__promo-title {
+        margin: 0 0 4px 0;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        color: $color-black-russian;
+
+        @include vp-1024 {
+            font-size: 24px;
+            line-height: 28px;
+        }
+    }
+
+    &__promo-text {
+        margin: 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        color: $color-storm-grey-1;
+
+        @include vp-768 {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    /* ---------- Заголовок секции ---------- */
+    &__header {
+        margin: 0 0 28px 0;
+
+        @include vp-768 {
+            margin: 0 0 32px 0;
+        }
+
+        @include vp-1024 {
+            margin: 0 0 48px 0;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        margin: 0 0 8px 0;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: -0.02em;
+        color: $color-black-russian;
+
+        @include vp-768 {
+            font-size: 28px;
+            line-height: 32px;
+        }
+
+        @include vp-1024 {
+            display: flex;
+            align-items: center;
+            gap: 30px; // воздух между линиями и текстом
+            margin: 0 0 12px 0;
+            font-size: 40px;
+            line-height: 44px;
+            letter-spacing: -0.04em;
+
+            @include vp-1536 {
+                gap: 40px; // воздух между линиями и текстом
+            }
+
+            // горизонтальные «усы» по бокам заголовка
+            &::before,
+            &::after {
+                content: "";
+                flex: 1; // тянутся от текста до краёв контейнера
+                height: 2px;
+                background-color: $color-royal-blue-1;
+            }
+
+            &::before {
+                margin-left: calc(50% - 50vw); // левая линия уходит к левому краю окна
+            }
+
+            &::after {
+                margin-right: calc(50% - 50vw); // правая — к правому
+            }
+        }
+    }
+
+    &__title-text {
+        @include vp-1024 {
+            flex: 0 1 auto; // текст не растягивается, но может ужаться и перенестись
+            max-width: 696px; // принудительно ломает заголовок в две строки, как в макете
+            text-align: center;
+        }
+    }
+
+    &__subtitle {
+        margin: 0;
+        font-size: 16px;
+        line-height: 22px;
+        color: $color-storm-grey-1;
+
+        @include vp-1024 {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+    /* ---------- Сетка преимуществ ---------- */
+    &__features {
+        list-style: none;
+        margin: 0 0 60px 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr; // mobile — одна колонка
+        gap: 12px;
+
+        @include vp-768 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include vp-1024 {
+            gap: 60px 25px;
+        }
+    }
+
+    &__feature {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; // mobile/tablet — левое выравнивание
+        background: $color-solitude-1;
+        border-radius: 12px;
+        padding: 20px;
+
+        @include vp-768 {
+            padding: 24px;
+        }
+
+        @include vp-1024 {
+            background: transparent; // desktop — прозрачный фон
+            border-radius: 0;
+            padding: 0;
+            align-items: center; // desktop — центрирование
+            text-align: center;
+        }
+    }
+
+    &__feature-icon {
+        width: 32px;
+        height: 32px;
+        margin: 0 0 12px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        background-color: transparent; // фон
+        color: $color-black-russian; // подхват через currentColor
+
+        @include vp-1024 {
+            margin: 0 0 16px 0;
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            background-color: $color-royal-blue-1; // на десктопе фон синий
+            color: $color-white; // и иконка белая
+        }
+    }
+
+    &__feature-title {
+        margin: 0 0 12px 0;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: $color-black-russian;
+
+        @include vp-1024 {
+            margin: 0 0 16px 0;
+            font-size: 24px;
+            line-height: 28px;
+        }
+    }
+
+    &__feature-text {
+        margin: 0;
+        font-size: 14px;
+        line-height: 18px;
+        color: $color-storm-grey-1;
+
+        @include vp-1024 {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    &__link {
+        color: $color-royal-blue-1;
+        transition: color 0.2s ease;
+    }
+
+    /* ---------- Плашка «Увеличьте доход» ---------- */
+    &__income {
+        height: 100px; // 360/768 — по макету
+        padding: 0 20px; // горизонталь; вертикаль — через align-items
+        display: flex;
+        align-items: center; // картинка выпирает вверх
+        justify-content: space-between;
+        gap: 12px;
+        background-color: $color-alice-blue; // ← см. флаг ниже про переменную
+        border-radius: 16px; // было 12 — исправлено по макету
+
+        @include vp-768 {
+            padding: 0 24px;
+        }
+
+        @include vp-1024 {
+            height: 154px; // 1024/1536 — по макету
+            padding: 0 100px;
+        }
+
+        @include vp-1536 {
+            padding: 0 120px;
+        }
+    }
+
+    &__income-title {
+        margin: 0 0 4px 0;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        color: $color-black-russian;
+
+        @include vp-1024 {
+            font-size: 24px;
+            line-height: 28px;
+        }
+    }
+
+    &__income-text {
+        margin: 0;
+        font-size: 14px;
+        line-height: 18px;
+        color: $color-black-russian;
+
+        @include vp-1024 {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    &__income-picture {
+        flex-shrink: 0;
+
+        // планшет и выше: картинка выше плашки —
+        // прижимаем её к низу, чтобы выпирала ТОЛЬКО вверх
+        @include vp-768 {
+            align-self: flex-end;
+        }
+    }
+
+
+    &__income-image {
+        display: block;
+        width: 125px; // 360
+        height: 84px;
+
+        @include vp-768 {
+            width: 174px;
+            height: 116px;
+        }
+
+        @include vp-1024 {
+            width: 260px; // покрывает и 1536 (тот же размер)
+            height: 175px;
+        }
+    }
+}
