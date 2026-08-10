@@ -189,7 +189,7 @@
 
         @include vp-1536 {
             gap: 80px 24px;
-            margin: 0 0 145px 0;
+            margin: 0 0 140px 0;
         }
     }
 
@@ -226,7 +226,7 @@
         color: $color-black-russian; // подхват через currentColor
 
         @include vp-1024 {
-            margin: 0 0 16px 0;
+            margin: 0 0 20px 0;
             width: 64px;
             height: 64px;
             border-radius: 12px;
@@ -323,6 +323,10 @@
         // прижимаем её к низу, чтобы выпирала ТОЛЬКО вверх
         @include vp-768 {
             align-self: flex-end;
+        }
+
+        @include vp-1536 {
+            margin-right: 65px; // картинка выпирает вправо за пределы плашки
         }
     }
 

@@ -735,7 +735,7 @@ a {
 }
 @media (min-width: 1304px) {
   .footer__nav-list {
-    max-width: 390px;
+    min-width: 400px;
   }
 }
 .footer__nav-item {
@@ -1556,7 +1556,7 @@ a {
 @media (min-width: 1536px) {
   .advantages__features {
     gap: 80px 24px;
-    margin: 0 0 145px 0;
+    margin: 0 0 140px 0;
   }
 }
 .advantages__feature {
@@ -1594,7 +1594,7 @@ a {
 }
 @media (min-width: 1024px) {
   .advantages__feature-icon {
-    margin: 0 0 16px 0;
+    margin: 0 0 20px 0;
     width: 64px;
     height: 64px;
     border-radius: 12px;
@@ -1692,6 +1692,11 @@ a {
 @media (min-width: 768px) {
   .advantages__income-picture {
     align-self: flex-end;
+  }
+}
+@media (min-width: 1536px) {
+  .advantages__income-picture {
+    margin-right: 65px;
   }
 }
 .advantages__income-image {
@@ -1792,7 +1797,7 @@ a {
     margin: 0 0 100px 0;
   }
 }
-@media (min-width: 1304px) {
+@media (min-width: 1536px) {
   .application {
     margin: 0 0 120px 0;
   }
@@ -1869,6 +1874,11 @@ a {
     padding: 80px 18px;
   }
 }
+@media (min-width: 1536px) {
+  .subscriptions__wrapper {
+    padding: 80px 18px 80px;
+  }
+}
 .subscriptions__title {
   margin: 0 auto 16px auto;
   font-weight: 600;
@@ -1904,9 +1914,10 @@ a {
     line-height: 22px;
   }
 }
-@media (min-width: 1304px) {
+@media (min-width: 1536px) {
   .subscriptions__text {
-    width: 100%;
+    margin: 0 auto 60px auto;
+    max-width: 100%;
   }
 }
 .subscriptions__list {
@@ -2202,7 +2213,7 @@ a {
 }
 @media (min-width: 1304px) {
   .benefit {
-    margin: 0 0 120px 0;
+    margin: 0 0 125px 0;
   }
 }
 .benefit__wrapper {
@@ -2222,7 +2233,7 @@ a {
 }
 @media (min-width: 1304px) {
   .benefit__wrapper {
-    padding: 80px;
+    padding: 50px 80px 50px 80px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -2265,7 +2276,7 @@ a {
 @media (min-width: 1304px) {
   .benefit__content {
     width: 100%;
-    max-width: 560px;
+    min-width: 560px;
   }
 }
 .benefit__title {
@@ -2318,7 +2329,7 @@ a {
 }
 @media (min-width: 1304px) {
   .benefit__list {
-    gap: 16px 0;
+    gap: 10px 0;
   }
 }
 .benefit__item {
@@ -2431,7 +2442,7 @@ a {
 @media (min-width: 1024px) {
   .faq__accordion {
     max-width: 700px;
-    gap: 16px 0;
+    gap: 15px 0;
   }
 }
 .faq__element {
@@ -2451,8 +2462,9 @@ a {
   justify-content: space-between;
   gap: 0 14px;
   font-family: inherit;
-  font-size: 16px;
-  line-height: 22px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
   text-align: left;
   color: #1E222E;
   background-color: transparent;
