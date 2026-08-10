@@ -2277,6 +2277,7 @@ a {
   .benefit__content {
     width: 100%;
     min-width: 560px;
+    transform: translateX(15px);
   }
 }
 .benefit__title {

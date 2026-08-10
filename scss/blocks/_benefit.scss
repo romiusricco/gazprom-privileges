@@ -69,10 +69,14 @@
   }
 
   &__content {
+
     @include vp-1304 {
       width: 100%;
       min-width: 560px;
+      transform: translateX(15px);
     }
+
+  
   }
 
   &__title {
