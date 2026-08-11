@@ -5,10 +5,6 @@
   position: relative;
   width: 100%;
 
-  @include vp-768 {
-    width: 100%;
-  }
-
   &__field {
     width: 100%;
     min-height: 56px;

@@ -4,13 +4,6 @@
 .custom-checkbox {
   width: 100%; // Растягивается на всю доступную ширину
 
-  @include vp-768 {
-    width: 100%;
-  }
-
-  @include vp-1024 {
-    width: 100%; // На десктопе тоже 100%, но форма сама ограничит через form__wrapper
-  }
 
   &__input:checked+.custom-checkbox__label {
     .custom-checkbox__field {

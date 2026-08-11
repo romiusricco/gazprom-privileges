@@ -36,11 +36,11 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr); // 298px каждая при inner 944
             gap: 25px;
-            margin: 0 0 100px 0;   
+            margin: 0 0 100px 0;
         }
 
         @include vp-1536 {
-            margin: 0 0 120px 0;   
+            margin: 0 0 120px 0;
         }
     }
 
@@ -52,14 +52,12 @@
             padding: 32px 20px;
             background-color: $color-solitude-1; // три отдельные карточки
             border-radius: 16px;
-            align-items: center;
             text-align: center;
 
         }
 
         @include vp-1536 {
             padding: 32px 10px;
-            min-width: 392px; // ширина карточки по макету 1536
             min-height: 122px; // высота карточки по макету 1536
         }
     }
@@ -264,6 +262,11 @@
     &__link {
         color: $color-royal-blue-1;
         transition: color 0.2s ease;
+
+        &:hover,
+        &:focus-visible {
+            color: $color-royal-blue-2;
+        }
     }
 
     /* ---------- Плашка «Увеличьте доход» ---------- */

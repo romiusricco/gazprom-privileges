@@ -39,5 +39,10 @@
     color: $color-white;
     padding: 15px 24px;
     background-color: $color-black-russian;
+
+    &:hover,
+    &:focus-visible {
+      background-color: lighten($color-black-russian, 10%);
+    }
   }
 }

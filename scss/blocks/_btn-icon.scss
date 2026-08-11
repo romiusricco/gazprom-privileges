@@ -15,6 +15,16 @@
   background-color: transparent;
   cursor: pointer;
 
+  &:hover {
+    color: lighten($color-black-russian, 10%);
+  }
+
+  &:focus-visible {
+    outline: 1px solid lighten($color-black-russian, 10%);
+    outline-offset: 1px;
+    border-radius: 4px;
+  }
+
   &__icon {
     width: 24px;
     height: 24px;
