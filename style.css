@@ -369,8 +369,8 @@ body {
 }
 
 main {
+  flex: 1 0 auto;
   padding: 70px 0 0 0;
-  flex-grow: 1;
 }
 @media (min-width: 768px) {
   main {
@@ -564,6 +564,7 @@ a {
 }
 
 .footer {
+  flex-shrink: 0;
   padding: 40px 0;
   background-color: #F4F6FA;
 }
@@ -677,6 +678,7 @@ a {
   width: 48px;
   height: 48px;
   flex-shrink: 0;
+  pointer-events: none;
 }
 .footer__app-name {
   font-size: 14px;
@@ -867,7 +869,7 @@ a {
   background-color: #1E222E;
 }
 .btn--tertiary:hover, .btn--tertiary:focus-visible {
-  background-color: rgb(19.6594427245%, 22.2807017544%, 30.1444788442%);
+  background-color: #6A6E80;
 }
 
 .btn-icon {
@@ -888,7 +890,7 @@ a {
   color: rgb(19.6594427245%, 22.2807017544%, 30.1444788442%);
 }
 .btn-icon:focus-visible {
-  outline: 1px solid rgb(19.6594427245%, 22.2807017544%, 30.1444788442%);
+  outline: 1px solid #6A6E80;
   outline-offset: 1px;
   border-radius: 4px;
 }
@@ -1155,6 +1157,7 @@ a {
 }
 .bonus-card__icon {
   flex-shrink: 0;
+  pointer-events: none;
 }
 .bonus-card__image {
   display: none;
@@ -2343,6 +2346,7 @@ a {
   height: 20px;
   margin: 1px 0 0 0;
   color: #FFFFFF;
+  pointer-events: none;
 }
 .benefit__text {
   margin: 0;

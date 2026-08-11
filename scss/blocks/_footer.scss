@@ -2,6 +2,7 @@
 @use "../global/mixins" as *;
 
 .footer {
+  flex-shrink: 0;
   padding: 40px 0;
   background-color: $color-solitude-1;
 
@@ -136,6 +137,7 @@
     width: 48px;
     height: 48px;
     flex-shrink: 0;
+    pointer-events: none;
   }
 
   &__app-name {
@@ -298,7 +300,7 @@
     font-size: 13px;
     line-height: 16px;
     color: $color-storm-grey-1;
-
+    
     &:focus-visible,
     &:hover {
       color: $color-black-russian;

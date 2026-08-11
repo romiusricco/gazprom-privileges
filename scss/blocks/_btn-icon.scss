@@ -20,7 +20,7 @@
   }
 
   &:focus-visible {
-    outline: 1px solid lighten($color-black-russian, 10%);
+    outline: 1px solid $color-storm-grey-1;
     outline-offset: 1px;
     border-radius: 4px;
   }
