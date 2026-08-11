@@ -424,6 +424,24 @@ a {
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
 }
+.visually-hidden--focusable:focus {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 8px 16px;
+  overflow: visible;
+  white-space: normal;
+  clip: auto;
+  clip-path: none;
+  background: #FFFFFF;
+  color: #1E222E;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
 
 /* Blocks */
 /* ------------------------------------ */
