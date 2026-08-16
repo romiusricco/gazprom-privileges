@@ -1578,8 +1578,8 @@ a {
 }
 @media (min-width: 1536px) {
   .advantages__features {
-    gap: 80px 24px;
-    margin: 0 0 140px 0;
+    gap: 65px 24px;
+    margin: 0 0 130px 0;
   }
 }
 .advantages__feature {
@@ -1605,6 +1605,11 @@ a {
     padding: 0 5px;
     align-items: center;
     text-align: center;
+  }
+}
+@media (min-width: 1536px) {
+  .advantages__feature {
+    min-height: 216px;
   }
 }
 .advantages__feature-icon {

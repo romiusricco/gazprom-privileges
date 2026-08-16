@@ -189,8 +189,8 @@
         }
 
         @include vp-1536 {
-            gap: 80px 24px;
-            margin: 0 0 140px 0;
+            gap: 65px 24px;
+            margin: 0 0 130px 0;
         }
     }
 
@@ -215,6 +215,10 @@
             padding: 0 5px;
             align-items: center; // desktop — центрирование
             text-align: center;
+        }
+
+        @include vp-1536 {
+            min-height: 216px;
         }
     }
 
