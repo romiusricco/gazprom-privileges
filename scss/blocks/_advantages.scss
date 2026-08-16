@@ -26,7 +26,8 @@
         border-radius: 16px;
 
         @include vp-768 {
-            padding: 0 24px;
+            padding: 24px;
+            gap: 24px;
         }
 
         @include vp-1024 {
@@ -202,7 +203,7 @@
         padding: 20px 25px;
 
         @include vp-768 {
-            min-height: 0;// ← сброс: на 768 высота по контенту/макету
+            min-height: 280;// ← сброс: на 768 высота по контенту/макету
             padding: 24px;
         }
 

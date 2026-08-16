@@ -1411,7 +1411,8 @@ a {
 }
 @media (min-width: 768px) {
   .advantages__promo {
-    padding: 0 24px;
+    padding: 24px;
+    gap: 24px;
   }
 }
 @media (min-width: 1024px) {
@@ -1591,7 +1592,7 @@ a {
 }
 @media (min-width: 768px) {
   .advantages__feature {
-    min-height: 0;
+    min-height: 280;
     padding: 24px;
   }
 }
