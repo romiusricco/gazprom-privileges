@@ -185,6 +185,7 @@
 
         @include vp-1024 {
             gap: 66px 25px;
+            margin: 0 0 105px 0;
         }
 
         @include vp-1536 {
@@ -208,9 +209,10 @@
         }
 
         @include vp-1024 {
+            min-height: 238px;
             background: transparent; // desktop — прозрачный фон
             border-radius: 0;
-            padding: 0;
+            padding: 0 5px;
             align-items: center; // desktop — центрирование
             text-align: center;
         }
@@ -332,6 +334,10 @@
         @include vp-768 {
             margin-right: 0; // ← сброс: на планшете картинка сидит по паддингам
             align-self: flex-end;
+        }
+
+        @include vp-1024 {
+            margin-right: -60px;
         }
 
         @include vp-1536 {

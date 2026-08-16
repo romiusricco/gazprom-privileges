@@ -1573,6 +1573,7 @@ a {
 @media (min-width: 1024px) {
   .advantages__features {
     gap: 66px 25px;
+    margin: 0 0 105px 0;
   }
 }
 @media (min-width: 1536px) {
@@ -1598,9 +1599,10 @@ a {
 }
 @media (min-width: 1024px) {
   .advantages__feature {
+    min-height: 238px;
     background: transparent;
     border-radius: 0;
-    padding: 0;
+    padding: 0 5px;
     align-items: center;
     text-align: center;
   }
@@ -1721,6 +1723,11 @@ a {
   .advantages__income-picture {
     margin-right: 0;
     align-self: flex-end;
+  }
+}
+@media (min-width: 1024px) {
+  .advantages__income-picture {
+    margin-right: -60px;
   }
 }
 @media (min-width: 1536px) {
