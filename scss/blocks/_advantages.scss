@@ -17,8 +17,9 @@
     &__promo {
         list-style: none;
         margin: 0 0 60px 0;
-        padding: 0 20px;
+        padding: 16px 21px;
         display: flex;
+        gap: 16px;
         flex-direction: column;
         background-color: $color-white;
         box-shadow: 0px 4px 20px 0px $color-black-russian-2;
@@ -45,7 +46,7 @@
     }
 
     &__promo-item {
-        padding: 16px 0;
+        padding: 0;
 
         @include vp-1024 {
             min-height: 144px; // высота карточки по макету 1024
@@ -107,7 +108,7 @@
     }
 
     &__title {
-        margin: 0 0 8px 0;
+        margin: 0 0 15px 0;
         font-weight: 600;
         font-size: 26px;
         line-height: 32px;
@@ -175,7 +176,7 @@
         padding: 0;
         display: grid;
         grid-template-columns: 1fr; // mobile — одна колонка
-        gap: 12px;
+        gap: 13px;
 
         @include vp-768 {
             grid-template-columns: repeat(3, 1fr);
@@ -195,11 +196,13 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start; // mobile/tablet — левое выравнивание
+        min-height: 200px;// ← Figma 360: высота карточки 200px
         background: $color-solitude-1;
         border-radius: 12px;
-        padding: 20px;
+        padding: 20px 25px;
 
         @include vp-768 {
+            min-height: 0;// ← сброс: на 768 высота по контенту/макету
             padding: 24px;
         }
 
@@ -321,10 +324,12 @@
 
     &__income-picture {
         flex-shrink: 0;
+        margin-right: -20px; // ← vp-360: сдвиг вправо на 20px
 
         // планшет и выше: картинка выше плашки —
         // прижимаем её к низу, чтобы выпирала ТОЛЬКО вверх
         @include vp-768 {
+            margin-right: 0; // ← сброс: на планшете картинка сидит по паддингам
             align-self: flex-end;
         }
 
