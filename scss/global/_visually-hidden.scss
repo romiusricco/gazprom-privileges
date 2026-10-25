@@ -1,3 +1,5 @@
+@use "../global/variables" as *;
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -9,5 +11,25 @@
   border: 0;
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
-}
 
+  &--focusable {
+    &:focus {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 100; // выше fixed-шапки (z-index: 10)
+      width: auto;
+      height: auto;
+      margin: 0; // ← сброс -1px из базы
+      padding: 8px 16px;
+      overflow: visible; // ← сброс hidden из базы
+      white-space: normal; // ← разрешаем перенос на узких экранах
+      clip: auto;
+      clip-path: none; // ← КРИТИЧНО: без этого ссылка не появится
+      background: $color-white;
+      color: $color-black-russian;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

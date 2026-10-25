@@ -1,3 +1,6 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
 .header {
   position: fixed;
   top: 0;
@@ -26,6 +29,7 @@
     width: 24px;
     height: 24px;
     margin: 0 24px 0 0;
+    pointer-events: none;
 
     @include vp-1024 {
       display: block;
@@ -91,7 +95,12 @@
     }
 
     &--light {
+      display: none;
       color: $color-storm-grey-1;
+
+      @include vp-1304 {
+        display: flex;
+      }
 
       &:last-child {
         margin: 0 auto 0 0;
@@ -129,7 +138,7 @@
     }
   }
 
-  .header__login {
+  &__login {
     display: none;
 
     @include vp-1024 {

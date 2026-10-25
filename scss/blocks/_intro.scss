@@ -1,15 +1,15 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
 .intro {
-  padding: 0 0 60px 0;
+  padding: 0;
   overflow: hidden;
+  margin: 0 0 5px 0;
 
   @include vp-1024 {
-    padding: 0;
-    margin: 0 0 100px 0;
+    margin: 0;
   }
 
-  @include vp-1304 {
-    margin: 0 0 120px 0;
-  }
 
   &__banner-wrapper {
     background-color: $color-alice-blue;
@@ -110,19 +110,30 @@
     flex-shrink: 0;
 
     @include vp-1304 {
-      margin: 0 -52px 0 0;
+      margin: 0;
     }
   }
 
   &__image {
-    margin: 0 auto;
+    display: block;
+    width: 330px; // ← явная ширина мобилки (вместо опоры на атрибут)
+    max-width: 100%; // ← защита от переполнения; на десктопе = ширина контейнера, не мешает
     height: 220px;
-    width: 100%;
+    margin: 0 auto;
 
-    @include vp-1304 {
-      margin: 0;
-      height: unset;
-      width: unset;
+    @include vp-768 {
+      width: 320px;
+      height: 220px;
+    }
+
+    @include vp-1024 {
+      width: 460px; // ← теперь реально 460 (max-width:100% = 944px, не режет)
+      height: 318px;
+    }
+
+    @include vp-1536 {
+      width: 660px; // ← теперь реально 660 (max-width:100% = 1224px, не режет)
+      height: 492px;
     }
   }
 }

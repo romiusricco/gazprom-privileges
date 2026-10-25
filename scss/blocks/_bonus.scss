@@ -1,7 +1,10 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
 .bonus {
   margin: 0 0 60px 0;
 
-  @include vp-1024 {
+  @include vp-960 {
     margin: 0 0 100px 0;
   }
 
@@ -14,7 +17,7 @@
     font-weight: 600;
     font-size: 26px;
     line-height: 32px;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.06em;
 
     @include vp-768 {
       margin: 0 0 32px 0;
@@ -22,7 +25,7 @@
       line-height: 32px;
     }
 
-    @include vp-1024 {
+    @include vp-960 {
       max-width: 700px;
       margin: 0 auto 40px auto;
       font-size: 40px;
@@ -44,7 +47,7 @@
     flex-direction: column;
     gap: 16px 0;
 
-    @include vp-1024 {
+    @include vp-960 {
       flex-direction: row;
       gap: 0 16px;
     }
@@ -55,7 +58,7 @@
   }
 
   &__item {
-    @include vp-1024 {
+    @include vp-960 {
       width: calc(50% - 8px);
     }
 

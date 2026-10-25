@@ -1,3 +1,6 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
 .application {
   margin: 0 0 60px 0;
 
@@ -5,7 +8,7 @@
     margin: 0 0 100px 0;
   }
 
-  @include vp-1304 {
+  @include vp-1536 {
     margin: 0 0 120px 0;
   }
 

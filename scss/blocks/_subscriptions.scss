@@ -1,3 +1,6 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
 .subscriptions {
   padding: 60px 0;
   margin: 0 0 60px 0;
@@ -25,6 +28,10 @@
 
     @include vp-1024 {
       padding: 80px 18px;
+    }
+
+    @include vp-1536 {
+      padding: 80px 18px 80px;
     }
   }
 
@@ -61,8 +68,9 @@
       line-height: 22px;
     }
 
-    @include vp-1304 {
-      min-width: 100%;
+    @include vp-1536 {
+      margin: 0 auto 60px auto;
+      max-width: 100%;
     }
   }
 
